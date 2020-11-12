@@ -1,0 +1,19 @@
+
+<div class="post">
+    {% if post.published_date %}
+      <div class="date">
+       <p> Published date:  {{ post.published_date }} </p>
+      </div>
+    {% endif %}
+    {% if user.is_authenticated %}
+     <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"> Edit <span class="glyphicon glyphicon-pencil"></span></a><hr>
+    {% endif %}
+    <img src="{{ post.image.url }}"> 
+    <h2>{{ post.title }}</h2>
+    {% if post.audio_file %}
+      <audio src="{{ post.audio_file.url }}" controls></audio>
+    {% else %}
+      <p>There's No Song assoicated with this File</p>
+    {% endif %}
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>

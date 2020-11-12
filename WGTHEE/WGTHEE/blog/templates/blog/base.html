@@ -1,0 +1,905 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>WGTHEE</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+<link href="static/img/wlogo.jpg" rel="icon"  class="fas fa-camera fa-2x">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container-fluid">
+
+      <div class="row justify-content-center">
+        <div class="col-xl-11 d-flex align-items-center">
+          <h1 class="logo mr-auto"><a href="/">WGTHEE</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo mr-auto"><img src="{% static 'img/logo.png" alt="" class="img-fluid"></a>-->
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Feedback</a></li>
+              <li><a href="#portfolio">Courses</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="{% url 'post_list' %}">Blog</a></li>
+              <li class="drop-down"><a href="">Drop Down</a>
+                <ul>
+                  <li><a href="#">Drop Down 1</a></li>
+                  <li><a href="#">Drop Down 3</a></li>
+                  <li><a href="#">Drop Down 4</a></li>
+                  <li><a href="#">Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'login' %}">Login</a></li>
+
+            </ul>
+          </nav><!-- .nav-menu -->
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(static/img/intro-carousel1/x3.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to We Guide Thee </h2>
+                <p class="animate__animated animate__fadeInUp"><h1>Ignite Your Motivation</h1></p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(static/img/intro-carousel1/mountain-climbing.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Start Your Journy </h2>
+                <p class="animate__animated animate__fadeInUp">It does not matter where you are in life right now . Always remember that before being so strong and sturdy and bearing those delicious fruits, every tree was a sapling first..!<br>
+                __Purti sethi <br><br>
+                that's why you should<button type="button" class="btn  btn-link " style=" text_decoration=none">SIGN UP</button>now for FREE! </p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(static/img/intro-carousel1/z3.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">We Offer Virtual Classrooms</h2>
+                <p class="animate__animated animate__fadeInUp">We bring students together, regardless of their location, to enable education. A virtual classroom has features such as choosing your own instructor, the courses you would like to learn in addition to an interactive enviroment through our blog. </p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(static/img/intro-carousel1/a2.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Measurement Of Your Progress</h2>
+                <p class="animate__animated animate__fadeInUp">It is crucial for teachers to be cognizant of the students’ abilities and specific learning needs as a teacher’s effectiveness can be quantified by measuring the degree of student engagement and the understanding of content consumption.</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(static/img/intro-carousel1/g1.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">IT GETS REAL!</h2>
+                <p class="animate__animated animate__fadeInUp">We provide a communication network between students and recruiters, by giving recruiters the ability to track your progress and sign you up for an internship opportunity to make what you've learnt come to life ! :D</p>
+                <a href="#featured-services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section Section ======= -->
+    <section id="featured-services">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 box">
+            <i class="ion-ios-bookmarks-outline"></i>
+            <h4 class="title"><a href="">Invest In Your Self </a></h4>
+            <p class="description">“The more you learn, the more you earn” -Warren Buffett<br>
+-Warren Buffett</p>
+          </div>
+
+          <div class="col-lg-4 box box-bg">
+            <i class="ion-ios-stopwatch-outline"></i>
+            <h4 class="title">Invest Your Time</h4>
+            <p class="description">“If you don't value your time, neither will others. Stop giving away your time and talents–start charging for it.”<br> –Kim Garst.</p>
+          </div>
+
+          <div class="col-lg-4 box">
+            <i class="ion-ios-heart-outline"></i>
+            <h4 class="title"><a href="">Your Spirit Matters</a></h4>
+            <p class="description">Put your heart, mind, and soul into even your smallest acts. This is the secret of success. <br>-Swami Sivananda
+</p>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>About Us</h3>
+          <p>WGTHEE is where lifelong learners come to learn the skills they need, to land the jobs they want, to build
+the lives they deserve.</p>
+        </header>
+
+        <div class="row about-cols">
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-col">
+              <div class="img">
+                <img src="static/img/mission.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Our Mission</a></h2>
+              <p>
+               Our mission is to train the world’s workforce in the careers of the future. We partner with leading companies to help students experience what they have learnt through internships, and teach the critical skills that companies are looking for in their workforce. With our powerful and flexible digital education platform, even the busiest learners can prepare themselves to take on the most in-demand roles.
+              </p>
+            </div>
+          </div>
+
+        
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="about-col">
+              <div class="img">
+                <img src="static/img/visionss.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Our Vision</a></h2>
+              <p>
+              
+              We envision a world where anyone, anywhere can transform their life by accessing the world’s best learning experience. We empower our learners to advance their careers, further their studies, improve their communities, and change the world. We believe WGTHEE can unlock your potential and help you become your best self.
+              <br><br><br>
+              </p>
+            </div>
+          </div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-col">
+              <div class="img">
+                <img src="static/img/values.jpg" alt="" class="img-fluid">
+                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+              </div>
+              <h2 class="title"><a href="#">Our Values</a></h2>
+              
+<button type="button" class="btn btn-success btn-lg disabled">Worthness of content</button><br>
+<button type="button" class="btn btn-light btn-lg disabled">Growth and improvement</button><br>
+<button type="button" class="btn btn-success btn-lg disabled">Teamwork and transparence</button><br>
+<button type="button" class="btn btn-light btn-lg disabled">Honesty and transparence</button><br>
+<button type="button" class="btn btn-success btn-lg disabled">Excellence and superiority</button><br>
+<br>
+
+         
+           
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Feedback</h3>
+          <p>We are always grateful to hear your thoughts about us.</p>
+        </header>
+
+        <div class="card-deck">
+         <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
+  <div class="card" style="width:10rem" >
+  
+    <img class="card-img-top" src="static\img\tweets\1.jpg" alt="tweet" style="height:230px">
+    <div class="card-body">
+      
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+   <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+  <div class="card"  style="width:10rem">
+    <img class="card-img-top" src="static\img\tweets\2.jpg" alt="tweet" style="height:230px">
+    <div class="card-body">
+     
+      <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+    </div>
+  </div>
+   <div class="icon"><i class="ion-ios-paper-outline"></i></div>
+  <div class="card"  style="width:10rem">
+    <img class="card-img-top" src="static\img\tweets\3.jpg" alt="tweet" style="height:230px">
+    <div class="card-body">
+      
+      <p class="card-text"><small class="text-muted">Last updated 22 mins ago</small></p>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card-deck">
+  <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+  <div class="card"  style="width:10rem">
+    <img class="card-img-top" src="static\img\tweets\4.jpg" alt="tweet" style="height:230px">
+    <div class="card-body">
+     
+      <p class="card-text"><small class="text-muted">Last updated 5 hours ago</small></p>
+    </div>
+  </div>
+   <div class="icon"><i class="ion-ios-barcode-outline"></i></div>
+  <div class="card"  style="width:10rem">
+    <img class="card-img-top" src="static\img\tweets\5.jpg" alt="tweet"  style="height:230px">
+    <div class="card-body">
+      
+      <p class="card-text"><small class="text-muted">Last updated 22 hours ago</small></p>
+    </div>
+  </div>
+   <div class="icon"><i class="ion-ios-people-outline"></i></div>
+  <div class="card"  style="width:10rem">
+    <img class="card-img-top" src="static\img\tweets\6.jpg" alt="tweet"  style="height:230px">
+    <div class="card-body">
+      
+      <p class="card-text"><small class="text-muted">Last updated 10 mins ago</small></p>
+    </div>
+  </div>
+</div>
+     
+    </section><!-- End Services Section -->
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container text-center " data-aos="zoom-in">
+        <h3>Inspirational Corner</h3>
+        <p>Need a little push to keep going?</p>
+        <p> pick a lucky number :D </p>
+       
+       
+        <a  target="_blank "class="cta-btn btn-success " href="https://i.pinimg.com/originals/f6/43/89/f6438979c429fa2ab3662b3db548a040.jpg">1</a> 
+         <a  target="_blank "class="cta-btn btn-warning " href="https://www.youtube.com/watch?v=i41qWJ6QjPI">2</a> 
+          <a  target="_blank "class="cta-btn btn-danger " href="https://i.pinimg.com/originals/6c/90/a4/6c90a4cc687d081624fe4576820fff01.png">3</a> 
+          <a  target="_blank "class="cta-btn btn-dark" href="https://medium.com/thrive-global/4-inspiring-entrepreneurs-who-went-from-zero-to-hero-c02f0e4be082">4</a> 
+          <a  target="_blank "class="cta-btn btn-primary" href="https://www.youtube.com/watch?v=VxW5D5VPg_0">5</a>
+           <a  target="_blank "class="cta-btn btn-secondary" href="https://www.youtube.com/watch?v=N5R-RX4fbbk">6</a> 
+            <a  target="_blank "class="cta-btn btn-info" href="https://www.youtube.com/watch?v=S2IAyahouk8">7</a> 
+          
+
+      </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3> Trendy Courses</h3>
+         
+        </header>
+
+        <div class="skills-content">
+
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">HTML <i class="val">100%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">Basics Of Charcoal Portrait <i class="val">90%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill"> Principles Of Marketing  <i class="val">75%</i></span>
+            </div>
+          </div>
+
+          <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+              <span class="skill">DIY <i class="val">55%</i></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>FROM Zero To Hero</h3>
+         <p>Study smart not hard</p>
+        </header>
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">8 </span>
+            <p>Hours Of Sleep</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">1 </span>
+            <p>Hours for planning</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">4 </span>
+            <p>Hours for productive work</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">3</span>
+            <p>Hours for break and exercise</p>
+          </div>
+
+        </div>
+
+        <div class="facts-img">
+          <img src="static/'img/facts-img.png" alt="" class="img-fluid">
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3 class="section-title">Our Courses</h3>
+        </header>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class=" col-lg-12">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-card">Card</li>
+            <li data-filter=".filter-web">Web</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/app1.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">App 1</a></h4>
+              <p>App</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/web3.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/web3.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Web 3"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">Web 3</a></h4>
+              <p>Web</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/app2.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/app2.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="App 2"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">App 2</a></h4>
+              <p>App</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/card2.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/card2.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 2"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">Card 2</a></h4>
+              <p>Card</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/web2.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/web2.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Web 2"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">Web 2</a></h4>
+              <p>Web</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/app3.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/app3.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="App 3"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">App 3</a></h4>
+              <p>App</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/card1.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/card1.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 1"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">Card 1</a></h4>
+              <p>Card</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/card3.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/card3.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Card 3"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">Card 3</a></h4>
+              <p>Card</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <figure>
+              <img src="static/img/portfolio/web1.jpg" class="img-fluid" alt="">
+              <a href="static/img/portfolio/web1.jpg" class="link-preview venobox" data-gall="portfolioGallery" title="Web 1"><i class="ion ion-eye"></i></a>
+              <a href="portfolio-details.html" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+            </figure>
+
+            <div class="portfolio-info">
+              <h4><a href="portfolio-details.html">Web 1</a></h4>
+              <p>Web</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Our Clients Section ======= -->
+    <section id="clients">
+      <div class="container" data-aos="zoom-in">
+
+        <header class="section-header">
+          <h3>Our Clients</h3>
+
+
+      </div>
+    </section><!-- End Our Clients Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>Testimonials</h3>
+        </header>
+
+        <div class="owl-carousel testimonials-carousel">
+
+          <div class="testimonial-item">
+            <img src="static/img/testimonial-1.jpg" class="testimonial-img" alt="">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo &amp; Founder</h4>
+            <p>
+              <img src="static/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              <img src="static/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="static/img/testimonial-2.jpg" class="testimonial-img" alt="">
+            <h3>Sara Wilsson</h3>
+            <h4>Designer</h4>
+            <p>
+              <img src="static/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              <img src="static/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="static/img/testimonial-3.jpg" class="testimonial-img" alt="">
+            <h3>Jena Karlis</h3>
+            <h4>Store Owner</h4>
+            <p>
+              <img src="{static/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+              <img src="static/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="static/img/testimonial-4.jpg" class="testimonial-img" alt="">
+            <h3>Matt Brandon</h3>
+            <h4>Freelancer</h4>
+            <p>
+              <img src="static/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+              <img src="static/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+          <div class="testimonial-item">
+            <img src="static/img/testimonial-5.jpg" class="testimonial-img" alt="">
+            <h3>John Larson</h3>
+            <h4>Entrepreneur</h4>
+            <p>
+              <img src="static/img/quote-sign-left.png" class="quote-sign-left" alt="">
+              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+              <img src="static/img/quote-sign-right.png" class="quote-sign-right" alt="">
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3>Team</h3>
+          <p>Meet the amazing people who made this project come to life</p>
+        </div>
+        
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <img src="static/img/leena1.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Leena Sharaf</h4>
+                  <span>co-founder and lead developer</span>
+                  <div class="social">
+                    <a   target="_blank" href="https://twitter.com/"><i  class="fa fa-twitter"></i></a>
+                    <a  target="_blank" href="https://web.facebook.com/leena.bassam.9"><i class="fa fa-facebook"></i></a>
+                    <a   target="_blank" href="leenasharaf98@gmail.com"><i class="fa fa-google-plus"></i></a>
+                    <a  target="_blank" href="https://www.linkedin.com/in/leena-sharaf-486473183/"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <img src="static/img/bayan1.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Bayan Amr</h4>
+                  <span>co-founder and lead developer</span>
+                  <div class="social">
+                    <a  target="_blank" href="https://twitter.com/BayanWA1"><i class="fa fa-twitter"></i></a>
+                    <a  target="_blank" href="https://web.facebook.com/BayanWAmr98/"><i class="fa fa-facebook"></i></a>
+                    <a  target="_blank" href="bayanwamr98@gmail.com"><i class="fa fa-google-plus"></i></a>
+                    <a  target="_blank" href="https://www.linkedin.com/in/bayan-amr-744937187/"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <img src="static/img/ahmad1.jpg" class="img-fluid" alt=""  >
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Ahmed Al-Tous</h4>
+                  <span>Lead Developer</span>
+                  <div class="social">
+                    <a  target="_blank" href="https://twitter.com/Ah_Tous"><i class="fa fa-twitter"></i></a>
+                    <a  target="_blank" href="https://www.facebook.com/ahmad.h.altous"><i class="fa fa-facebook"></i></a>
+                    <a  target="_blank" href="Ahmad.Altous98@gmail.com"><i class="fa fa-google-plus"></i></a>
+                    <a  target="_blank" href="http://linkedin.com/in/ahmad-al-tous-3946aa1b6"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <img src="static/img/anas1.png" class="img-fluid" alt="" >
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Anas Al-Roud</h4>
+                  <span>Lead Developer</span>
+                  <div class="social">
+                    <a  target="_blank" href="https://twitter.com/anasalroud"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank"  href="https://www.facebook.com/TheFrenchyStar"><i class="fa fa-facebook"></i></a>
+                    <a  target="_blank" href="roud2@hotmail.com"><i class="fa fa-google-plus"></i></a>
+                    <a  target="_blank" href="https://www.linkedin.com/in/anas-roud-15322b19a"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h3>Contact Us</h3>
+          <p>You can contact us via our University</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address> Jordan, As-Salt</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel: (05) 349 1111"> (05) 349 1111</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Website</h3>
+              <p><a target="_blank" href="https://www.bau.edu.jo/elearning.aspx">BAU Official Website</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validate"></div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send A Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>WGTHEE</h3>
+            <p>Online learning platform.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#about">About us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#services">Feedback</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Al-Balqaa' Applied University <br>
+             As-Salt<br>
+             Jordan <br>
+              <strong>Phone:</strong>(05) 349 1111<br>
+              <strong>Email:</strong> 	info@bau.edu.jo<br>
+            </p>
+
+            <div class="social-links">
+              <a href="https://twitter.com/anasalroud" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://web.facebook.com/ciroatbau/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/bayanwamr/?hl=en" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="Ahmad.Altous98@gmail.com" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="https://www.linkedin.com/in/leena-sharaf-486473183/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our background</h4>
+            <p>We are a group of computer engineering students at Al-Balqaa' Applied University, we are highly motivated, hard workers, and ambitious.  </p><br>
+            <p> This work is done as a part of our graduation requirements and is based on the fact that we rely strongly on online courses and websites through our studies.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>WGTHEE</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+      -->
+        Designed by "We Guide Thee" team
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
