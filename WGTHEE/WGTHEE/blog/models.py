@@ -17,6 +17,14 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return self.author
+        return str(self.author)
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    body = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return '%s - %s - %s' %(self.post.title, self.name, self.post.id)
 

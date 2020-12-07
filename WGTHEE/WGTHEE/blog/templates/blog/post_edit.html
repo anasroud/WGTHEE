@@ -10,7 +10,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-<link href="static/img/wlogo.jpg" rel="icon"  class="fas fa-camera fa-2x">
+  <link href="static/img/wlogo.jpg" rel="icon"  class="fas fa-camera fa-2x">
   <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -101,12 +101,13 @@
     </div>
   </section><!-- End Intro Section -->
 <br><br>
+<div class="container">
     <h2>New Post</h2>
     <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-danger">Save</button>
     </form>
-    
+</div>
 <br> <br>
 <footer id="footer">
     <div class="footer-top">

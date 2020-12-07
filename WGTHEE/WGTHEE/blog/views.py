@@ -9,9 +9,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post,Comment
 from django.utils import timezone
-from .forms import PostForm, CreateUserForm
+from .forms import PostForm, CreateUserForm ,CommentForm
 
 def registerPage(request):
     if request.user.is_authenticated:
@@ -84,16 +84,34 @@ def post_new(request):
 @login_required(login_url='login')
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    comments = post.comments.all()
+    new_comment = None
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
+        form2 = CommentForm(data = request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
+        elif form2.is_valid():
+            new_comment = form2.save(commit=False)
+            new_comment.post = post
+            new_comment.save()
     else:
         form = PostForm(instance=post)
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/post_edit.html', {'form': form , 'form2':form})
 
-
+# def Comment_new(request):
+#     if request.method == "POST":
+#         form = CommentForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             Comment = form.save(commit=False)
+#             Comment.author = request.user
+#             Comment.published_date = timezone.now()
+#             Comment.save()
+#             return redirect('post_detail', pk=post.pk)
+#     else:
+#         form = CommentForm()
+#     return render(request, 'blog/post_edit.html', {'form': form})
