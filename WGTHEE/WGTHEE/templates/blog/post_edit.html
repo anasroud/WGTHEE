@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}<!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(static\img\about-plan.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">What's on your mind? </h2>
+                <p class="animate__animated animate__fadeInUp"><h1>Share and discuss your thoughts with others </h1></p>
+                
+              </div>
+            </div>
+          </div>
+
+         
+
+          
+
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+<br><br>
+<div class="container">
+    <h2>New Post</h2>
+    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-danger">Save</button>
+    </form>
+</div>
+<br> <br>
+</div>
+{%endblock%}

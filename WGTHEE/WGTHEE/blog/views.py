@@ -11,7 +11,7 @@ from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from .models import Post,Comment
 from django.utils import timezone
-from .forms import PostForm, CreateUserForm ,CommentForm
+from .forms import PostForm, CreateUserForm, CommentForm
 
 def registerPage(request):
     if request.user.is_authenticated:
@@ -55,7 +55,7 @@ def logoutUser(request):
     return redirect('/')
 
 def home(request):
-    return render(request, 'blog/base.html')    
+    return render(request, 'blogTemplates/home.html')
     
 @login_required(login_url='login')
 def post_list(request):
@@ -84,6 +84,21 @@ def post_new(request):
 @login_required(login_url='login')
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'blog/post_edit.html', {'form': form})
+
+@login_required(login_url='login')
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     comments = post.comments.all()
     new_comment = None
     if request.method == "POST":
@@ -103,15 +118,9 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form , 'form2':form})
 
-# def Comment_new(request):
-#     if request.method == "POST":
-#         form = CommentForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             Comment = form.save(commit=False)
-#             Comment.author = request.user
-#             Comment.published_date = timezone.now()
-#             Comment.save()
-#             return redirect('post_detail', pk=post.pk)
-#     else:
-#         form = CommentForm()
-#     return render(request, 'blog/post_edit.html', {'form': form})
+def courses(request):
+    return render(request, 'blogTemplates/courses.html')
+    
+@login_required(login_url='login')
+def dashboard(request):
+    return render(request,'blogTemplates/userDashBoard.html')

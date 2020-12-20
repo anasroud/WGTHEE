@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<section class="breadcrumbs">
+  <div class="container">
+    <h1>Signup page</h1>      
+        <form method="post" novalidate class="border">         
+         {%csrf_token%}         
+         {% include 'includes/form.html'%}         
+         <button type="submit" class="btn btn-primary">Create new user</button>     
+        </form>  
+  </div>
+</section>
+{%endblock%}

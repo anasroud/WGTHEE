@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(static\img\about-plan.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">What's on your mind? </h2>
+                <p class="animate__animated animate__fadeInUp"><h1>Share and discuss your thoughts with others </h1></p>
+                
+              </div>
+            </div>
+          </div>
+
+         
+
+          
+
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+<br><br>
+<div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        {% if user.is_authenticated %}
+        <blockquote class="blockquote">
+          <footer class="blockquote-footer"> 
+           <a  class="btn btn-success" href="{% url 'post_edit' pk=post.pk %}"> Edit <span class="glyphicon glyphicon-pencil"></span></a><hr>
+        {% endif %}
+        <h1 class="mt-4">{{ post.title }}</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a href="#">{{post.author}}</a>
+        </p>
+
+        <!-- Date/Time -->
+        <p>Published Date:{{ post.published_date }}</p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src={{ post.image.url }} alt="">
+
+        <hr>
+    {% if post.audio_file %}
+      <audio src="{{ post.audio_file.url }}" controls></audio>
+    {% else %}
+      <p>There's No Song assoicated with this File</p>
+    {% endif %}
+
+        <!-- Post Content -->
+        <p class="lead">{{ post.text|linebreaksbr }}</p>
+
+         <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form method = "POST">
+              <div class="form-group">
+              {{ form2.as_p }}
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+        {% for comment in post.comments.all %}
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">{{ comment.name }} - {{ comment.date_added }}</h5>
+            {{ comment.body }}
+          </div>
+        </div>
+        {% endfor %}
+<br> <br>
+</div>
+</div>
+</div>
+</div>
+{%endblock%}

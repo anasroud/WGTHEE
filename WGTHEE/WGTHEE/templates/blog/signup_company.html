@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<section class="breadcrumbs">
+  <div class="container">
+    <h1>Signup company page</h1>      
+        <form method="post" novalidate class="border">         
+         {%csrf_token%}     
+         <div class="form-group">  
+         <label>Username:</label>  
+         <input type="text" class="form-control" placeholder={{ user.username }} aria-label="Username" aria-describedby="basic-addon1" disabled>
+        <label>Email:</label>
+         <input type="text" class="form-control" placeholder={{user.email}} aria-label="Username" aria-describedby="basic-addon1" disabled>
+        </div>
+         {% include 'includes/form_company.html'%}    
+         <button type="submit" class="btn btn-primary">complete the regestration</button>     
+        </form>  
+  </div>
+</section>
+{%endblock%}

@@ -17,7 +17,7 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return str(self.author)
+        return self.author
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)

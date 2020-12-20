@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(static/img/blogg.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">What's on your mind? </h2>
+                <p class="animate__animated animate__fadeInUp"><h1>Share and discuss your thoughts with others </h1></p>
+                <a href="{% url 'post_new' %}" class="btn-get-started scrollto animate__animated animate__fadeInUp">Add Post</a>
+              </div>
+            </div>
+          </div>
+
+         
+
+          
+
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section><!-- End Intro Section -->
+
+  
+    
+    <!-- ======= Featured Services Section Section ======= -->
+    
+        
+      <div class="container">
+
+        <div class="row ">
+
+            <div class="col mt-5">
+                <h1>Posts</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col m-5  d-flex flex-wrap">
+                {% for post in posts %}
+                    <div class="card m-3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">date: {{ post.published_date }}</h5>
+                            <p class="card-text">
+                                Title: {{ post.title }} <br>
+                            </p>
+                             <img src="{{ post.image.url }}" width="80px">
+                    <h6><a href="{% url 'post_detail' pk=post.pk %}">( Click Here To See Details )</a></h6>
+             
+                          </div>
+                  
+                    </div>
+                {% endfor %}
+            </div>
+        </div>    
+    </div>
+    </div>
+{%endblock%}
